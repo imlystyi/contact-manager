@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using ContactManager.Server.Models.Dto;
+﻿using ContactManager.Server.Models.Dto;
 using FluentValidation;
 
 namespace ContactManager.Server.Validators;
