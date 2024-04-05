@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ContactManager.Server.Models.Entities;
 
-[Table("contactEntity")]
+[Table("contact")]
 public class Contact
 {
     [Column("id")]
