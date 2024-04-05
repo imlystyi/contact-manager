@@ -14,7 +14,17 @@ public class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddDbContext<ContactContext>(options =>
                                                               options.UseSqlServer(builder.Configuration
-                                                                              .GetConnectionString("Default")));
+                                                                     .GetConnectionString("Default")));
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(corsBuilder =>
+            {
+                corsBuilder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+            });
+        });
 
         WebApplication app = builder.Build();
 
@@ -31,6 +41,7 @@ public class Program
         app.UseAuthorization();
         app.MapControllers();
         app.MapFallbackToFile("/index.html");
+        app.UseCors();
 
         app.Run();
     }
