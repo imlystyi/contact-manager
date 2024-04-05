@@ -9,7 +9,7 @@ public class ContactUpdateDto
     [StringLength(120)]
     public required string Name { get; set; }
 
-    public required DateOnly BirthDate { get; set; }
+    public required string BirthDate { get; set; }
 
     public required bool IsMarried { get; set; }
 

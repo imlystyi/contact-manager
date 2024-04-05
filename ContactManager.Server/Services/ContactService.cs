@@ -62,7 +62,7 @@ public class ContactService(ContactContext contactContext)
         Contact contact = contactContext.FindById(updateDto.Id) ?? throw new ContactNotFound();
 
         contact.Name = updateDto.Name;
-        contact.BirthDate = updateDto.BirthDate;
+        contact.BirthDate = DateOnly.Parse(updateDto.BirthDate);
         contact.IsMarried = updateDto.IsMarried;
         contact.Phone = updateDto.Phone;
         contact.Salary = updateDto.Salary;
